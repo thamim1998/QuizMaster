@@ -1,6 +1,6 @@
 # Quiz App
 
-A simple quiz application built with **Java**, **Spring Boot**, and **PostgreSQL**. This application allows users to create, update, retrieve quiz questions, and calculate their quiz scores. It is designed to be a lightweight and easy-to-use quiz management system.
+A quiz application built with **Java**, **Spring Boot**, and **PostgreSQL**. This application allows users to create, update, retrieve quiz questions, and calculate their quiz scores. It is designed to be a lightweight and easy-to-use quiz management system.
 
 ---
 
