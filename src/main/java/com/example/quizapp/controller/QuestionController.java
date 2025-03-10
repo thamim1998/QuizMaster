@@ -1,8 +1,9 @@
 package com.example.quizapp.controller;
 
-import com.example.quizapp.Question;
+import com.example.quizapp.model.Question;
 import com.example.quizapp.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,7 +16,7 @@ public class QuestionController {
     QuestionService questionService;
 
     @GetMapping("allQuestions")
-    public List<Question> getAllQuestions(){
+    public ResponseEntity<List<Question>> getAllQuestions(){
         return questionService.getAllQuestions();
     }
 
@@ -24,10 +25,18 @@ public class QuestionController {
         return questionService.getQuestionsByCategory(category);
     }
 
-
-    @PostMapping("add")  // Ensure the endpoint is correct
-    public String addQuestion(@RequestBody Question question) {
-        System.out.println("I called this method");
+    @PostMapping("add")
+    public ResponseEntity<String> addQuestion(@RequestBody Question question) {
         return questionService.addQuestion(question);
+    }
+
+    @DeleteMapping("delete/{questionId}")
+    public ResponseEntity<String> deleteQuestion(@PathVariable int questionId) {
+        return questionService.deleteQuestion(questionId);
+    }
+
+    @PutMapping("update/{questionId}")
+    public Question updateQuestion(@PathVariable int questionId, @RequestBody Question question) {
+        return questionService.updateQuestion(questionId, question);
     }
 }

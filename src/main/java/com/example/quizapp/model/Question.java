@@ -1,4 +1,4 @@
-package com.example.quizapp;
+package com.example.quizapp.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,7 +12,7 @@ public class Question {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String questionTitle; // Lombok generates setQuestionTitle()
+    private String questionTitle;
     private String option1;
     private String option2;
     private String option3;
